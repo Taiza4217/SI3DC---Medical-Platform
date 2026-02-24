@@ -1,0 +1,26 @@
+# Root level ignores
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+installation_id
+
+# Ignore env files in root
+.env
+.env.*
+
+# Ignore backend unversionable artifacts
+si3dc-backend/venv/
+si3dc-backend/env/
+si3dc-backend/.venv/
+si3dc-backend/__pycache__/
+si3dc-backend/*.pyc
+si3dc-backend/.pytest_cache/
+si3dc-backend/.coverage
+si3dc-backend/htmlcov/
+
+# Ignore frontend unversionable artifacts
+si3dc-frontend/node_modules/
+si3dc-frontend/dist/
+si3dc-frontend/build/
+si3dc-frontend/coverage/
