@@ -1,4 +1,3 @@
-````markdown
 # SI3DC Frontend
 
 The **SI3DC Frontend** is the visual and interactive layer of the SI3DC ecosystem.  
@@ -57,7 +56,6 @@ si3dc-frontend/
 ├── public/
 ├── package.json
 └── vite.config.ts
-````
 
 ---
 
