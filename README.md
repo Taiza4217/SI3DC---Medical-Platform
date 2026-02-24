@@ -1,4 +1,3 @@
-````markdown id="z8k2rm"
 # SI3DC (Intelligent Clinical Decision System)
 
 ## Project Overview
@@ -55,7 +54,6 @@ Responsible for:
 si3dc/
 ├── si3dc-backend/
 └── si3dc-frontend/
-````
 
 ---
 
@@ -154,7 +152,3 @@ Both services must be running for full system functionality.
 * [Frontend Documentation](./si3dc-frontend/README.md)
 
 Each submodule contains detailed setup, environment configuration, and execution instructions.
-
-
-```
-```
