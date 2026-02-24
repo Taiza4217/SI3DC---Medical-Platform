@@ -1,0 +1,43 @@
+﻿============================= test session starts =============================
+platform win32 -- Python 3.13.12, pytest-9.0.2, pluggy-1.6.0 -- C:\Users\taiza\.gemini\antigravity\scratch\si3dc-backend\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\taiza\.gemini\antigravity\scratch\si3dc-backend
+configfile: pyproject.toml
+plugins: anyio-4.12.1, asyncio-1.3.0, cov-7.0.0
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 14 items
+
+tests/test_integration_auth.py::test_login_success PASSED                [  7%]
+tests/test_integration_auth.py::test_login_wrong_password PASSED         [ 14%]
+tests/test_integration_auth.py::test_login_nonexistent_user PASSED       [ 21%]
+tests/test_integration_auth.py::test_refresh_token_flow FAILED           [ 28%]
+tests/test_integration_auth.py::test_refresh_token_reuse_blocked PASSED  [ 35%]
+tests/test_integration_auth.py::test_refresh_with_invalid_token PASSED   [ 42%]
+tests/test_integration_auth.py::test_logout_success PASSED               [ 50%]
+tests/test_integration_auth.py::test_logout_all_devices PASSED           [ 57%]
+tests/test_integration_auth.py::test_get_me_authenticated PASSED         [ 64%]
+tests/test_integration_auth.py::test_get_me_unauthenticated PASSED       [ 71%]
+tests/test_integration_patients.py::test_create_patient_success PASSED   [ 78%]
+tests/test_integration_patients.py::test_create_patient_invalid_cpf PASSED [ 85%]
+tests/test_integration_patients.py::test_patients_requires_auth FAILED   [ 92%]
+tests/test_integration_patients.py::test_health_endpoint PASSED          [100%]
+
+================================== FAILURES ===================================
+___________________________ test_refresh_token_flow ___________________________
+tests\test_integration_auth.py:94: in test_refresh_token_flow
+    assert new_tokens["access_token"] != tokens["access_token"]
+E   AssertionError: assert 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5N2MzMGFkYS1iYjM4LTQxZDAtODljYi1lNDM4MTNiYjMzOTciLCJyb2xlIjoiTUVESVVNIiwiaW5zdGl0dXRpb25faWQiOiIyZWU0YTc0My05NDA4LTQxZjgtODM3Zi1iMzUxNmVkYzRlZDkiLCJyZWdpc3RyYXRpb25fdHlwZSI6IkNSTSIsImV4cCI6MTc3MTY5Mzc5NSwidHlwZSI6ImFjY2VzcyJ9.8Ww9nFJ60QqT_-MtXFyDbY01gGp5Om2_z4tqefT3b50' != 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5N2MzMGFkYS1iYjM4LTQxZDAtODljYi1lNDM4MTNiYjMzOTciLCJyb2xlIjoiTUVESVVNIiwiaW5zdGl0dXRpb25faWQiOiIyZWU0YTc0My05NDA4LTQxZjgtODM3Zi1iMzUxNmVkYzRlZDkiLCJyZWdpc3RyYXRpb25fdHlwZSI6IkNSTSIsImV4cCI6MTc3MTY5Mzc5NSwidHlwZSI6ImFjY2VzcyJ9.8Ww9nFJ60QqT_-MtXFyDbY01gGp5Om2_z4tqefT3b50'
+---------------------------- Captured stdout call -----------------------------
+2026-02-21 13:39:55 [info     ] refresh_token_stored           jti=72153aac-8b66-481b-af5a-3fff00b43bf7 user_id=97c30ada-bb38-41d0-89cb-e43813bb3397
+2026-02-21 13:39:55 [info     ] login_success                  ip=127.0.0.1 role=MEDIUM user_id=97c30ada-bb38-41d0-89cb-e43813bb3397
+2026-02-21 13:39:55 [info     ] refresh_token_revoked          jti=72153aac-8b66-481b-af5a-3fff00b43bf7
+2026-02-21 13:39:55 [info     ] refresh_token_stored           jti=5c300ec5-b30b-4555-ae50-1937f60c98c1 user_id=97c30ada-bb38-41d0-89cb-e43813bb3397
+_________________________ test_patients_requires_auth _________________________
+tests\test_integration_patients.py:84: in test_patients_requires_auth
+    assert response.status_code == 401
+E   assert 405 == 401
+E    +  where 405 = <Response [405 Method Not Allowed]>.status_code
+=========================== short test summary info ===========================
+FAILED tests/test_integration_auth.py::test_refresh_token_flow - AssertionErr...
+FAILED tests/test_integration_patients.py::test_patients_requires_auth - asse...
+======================== 2 failed, 12 passed in 10.30s ========================

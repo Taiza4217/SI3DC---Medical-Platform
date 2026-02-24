@@ -1,0 +1,7 @@
+﻿[INFO] Host: aws-0-us-west-2.pooler.supabase.com:5432
+[INFO] User: postgres.plifrvhlybixjwoiaqjg
+[INFO] Connected! Creating tables...
+[OK] All 14 tables created successfully!
+[OK] Admin criado: ADMIN / ADMIN001 / senha: admin12345
+
+[DONE] Banco inicializado com sucesso!
