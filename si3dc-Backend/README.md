@@ -1,4 +1,3 @@
-````markdown
 # SI3DC Backend
 
 The **SI3DC Backend** centralizes security, business logic, and clinical decision workflows within the SI3DC platform.  
@@ -61,7 +60,6 @@ si3dc-backend/
 ├── mock_api.py
 ├── requirements.txt
 └── venv/
-````
 
 Future architectural evolution will fragment `mock_api.py` into:
 
